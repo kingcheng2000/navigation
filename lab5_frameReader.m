@@ -29,8 +29,13 @@ Fra_index =1:frame_number;
     y(i+1)= corner_y + y_new;
  end 
  plot(x,y)
- load red_square_gt.mat
- 
+% Visualise also the ground truth track (in spatial coordinates)
+load red_square_gt.mat
+% 
+%
+y = gt_track_spatial(:,1);
+x = gt_track_spatial(:,2);
+plot (x,y)
 
 %% Estimate and display the optical flow of objects in the video
 % while hasFrame(vidReader)
